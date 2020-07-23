@@ -48,9 +48,15 @@ class Person {
   }
   eat(edible){
     this.stomach.push(edible)
-    if (edible > 10){
-      return 
+    if (this.stomach.length > 10){
+      this.stomach.pop(edible)
     }
+  }
+  poop(){
+    return this.stomach = [];
+  }
+  toString(){
+    return `${this.name}, ${this.age}`
   }
 
 }
