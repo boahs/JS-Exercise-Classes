@@ -131,13 +131,27 @@ class Lambdasian {
         + `favLanguage`: i.e. 'JavaScript, Python, Elm etc.'
         + `catchPhrase`: i.e. `Don't forget the homies`.
     - The constructor calls the parent constructor passing it what it needs.
-    - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on the instance.
+    - The constructor should also initialize `specialty`, `favLanguage` and `catchPhrase` properties on 
+    the instance.
     - Instructor instances have the following methods:
-        + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are learning about {subject}' where subject is the param passed in.
-        + `grade` receives a `student` object and a `subject` string as arguments and returns '{student.name} receives a perfect score on {subject}'
+        + `demo` receives a `subject` string as an argument and returns the phrase 'Today we are 
+        learning about {subject}' where subject is the param passed in.
+        + `grade` receives a `student` object and a `subject` string as arguments and returns 
+        '{student.name} receives a perfect score on {subject}'
 */
-class Instructor {
-
+class Instructor extends Lambdasian{
+  constructor(arg){
+    super(arg);
+    this.specialty = arg.specialty;
+    this.favLanguage = arg.favLanguage;
+    this.catchPhrase = arg.catchPhrase;
+  }
+  demo(subject){
+    return `Today we are learning about ${subject}`
+  }
+  grade(student,subject){
+    return `${student.name} receives a perfect score on ${subject}`
+  }
 }
 
 /*
@@ -155,7 +169,7 @@ class Instructor {
         + `PRAssignment` a method that receives a subject as an argument and returns `student.name has submitted a PR for {subject}`
         + `sprintChallenge` similar to PRAssignment but returns `student.name has begun sprint challenge on {subject}`
 */
-class Student {
+class Student  {
 
 }
 
